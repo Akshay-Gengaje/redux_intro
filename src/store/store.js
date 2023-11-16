@@ -1,8 +1,11 @@
+import { createStore } from "redux";
 const initialState = {
   balance: 0,
   loan: 0,
   loanPurpose: "",
 };
+
+create;
 
 function reducer(state = initialState, action) {
   switch (action.type) {
@@ -27,3 +30,6 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
+
+// create store
+store.dis
