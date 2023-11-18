@@ -8,10 +8,10 @@ function formatCurrency(value) {
 }
 
 function BalanceDisplay() {
-  const balance = useSelector((state) => state.account.balance);
+  const { balance, isLoading } = useSelector((state) => state.account);
   return (
     <div className="fixed top-20 right-5 bg-slate-200 p-2 rounded shadow-md hover:shadow-2xl hover:animate-bounce font-sans">
-      Balance : {formatCurrency(balance)}
+      Balance : {isLoading ? `Converting..` : formatCurrency(balance)}
     </div>
   );
 }
