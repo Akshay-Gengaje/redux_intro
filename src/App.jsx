@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import CreateCustomer from "./features/customers/CreateCustomer";
+import Customer from "./features/customers/Customer";
+import AccountOperations from "./features/accounts/AccountOperations";
+import BalanceDisplay from "./features/accounts/BalanceDisplay";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const fullName = useSelector((state) => state.customer.fullName);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div className="bg-gradient-to-r from-purple-500 to-purple-900 w-full min-h-screen p-5">
+      <h1 className="text-4xl font-bold text-center p-10">
+        🏦 The React-Redux Bank ⚛️
+      </h1>
+      <p className="text-lg mb-20 text-center italic">
+        This is a simple bank application built using React and Redux.
       </p>
-    </>
-  )
+      {fullName === "" ? (
+        <CreateCustomer />
+      ) : (
+        <>
+          <AccountOperations />
+          <Customer />
+          <BalanceDisplay />
+        </>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
