@@ -37,7 +37,7 @@ function AccountOperations() {
   return (
     <div className="font-sans flex flex-col items-center">
       <h2 className="text-2xl font-semibold mb-5">Your account operations</h2>
-      <div className="p-6 bg-black bg-opacity-30 mx-6 space-y-3 rounded-lg text-lg uppercase h-full w-[60%] flex flex-col items-stretch">
+      <div className="p-6 bg-black bg-opacity-30 mx-6 space-y-3 rounded-lg text-lg uppercase w-[90%]  md:w-[70%]  flex flex-col items-stretch">
         <div className="flex justify-between gap-2">
           <label>Deposit</label>
           <input

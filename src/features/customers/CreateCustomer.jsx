@@ -14,7 +14,7 @@ function CreateCustomer() {
   return (
     <div className="font-sans flex flex-col justify-center items-center">
       <h2 className="text-2xl font-semibold mb-5 ">Create new customer</h2>
-      <div className="p-6 bg-black bg-opacity-30 mx-6 space-y-3 rounded-lg text-lg uppercase h-full w-[50%] flex flex-col ">
+      <div className="p-6 bg-black bg-opacity-30 mx-6 space-y-3 rounded-lg text-lg uppercase w-[90%]  md:w-[50%] flex flex-col ">
         <div className="flex justify-between">
           <label>Customer full name</label>
           <input
