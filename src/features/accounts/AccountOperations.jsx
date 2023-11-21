@@ -37,9 +37,9 @@ function AccountOperations() {
   return (
     <div className="font-sans flex flex-col items-center">
       <h2 className="text-2xl font-semibold mb-5">Your account operations</h2>
-      <div className="p-6 bg-black bg-opacity-30 mx-6 space-y-3 rounded-lg text-lg uppercase w-[90%]  md:w-[70%]  flex flex-col items-stretch">
-        <div className="flex justify-between gap-2">
-          <label>Deposit</label>
+      <div className=" p-6 bg-black bg-opacity-30 mx-6 space-y-3 rounded-lg text-lg uppercase w-[90%]  md:w-[70%]  flex flex-col items-stretch">
+        <div className="flex flex-col md:flex-row justify-between gap-2">
+          <label className="text-white">Deposit</label>
           <input
             type="number"
             value={depositAmount}
@@ -58,30 +58,30 @@ function AccountOperations() {
 
           <button
             onClick={handleDeposit}
-            className="bg-gray-200 p-1 rounded-md w-60"
+            className="bg-gray-200 p-1 rounded-md w-full md:w-60"
           >
             Deposit {depositAmount}
           </button>
         </div>
 
-        <div className="flex justify-between gap-2">
-          <label>Withdraw</label>
+        <div className="flex flex-col md:flex-row justify-between gap-2">
+          <label className="text-white">Withdraw</label>
           <input
             type="number"
             value={withdrawalAmount}
             onChange={(e) => setWithdrawalAmount(+e.target.value)}
-            className="rounded-md px-1 w-80"
+            className="rounded-md px-1 w-96"
           />
           <button
             onClick={handleWithdrawal}
-            className="bg-gray-200 p-1 rounded-md w-60"
+            className="bg-gray-200 p-1 rounded-md w-full md:w-60"
           >
             Withdraw {withdrawalAmount}
           </button>
         </div>
 
-        <div className="flex justify-around">
-          <label>Request loan</label>
+        <div className="flex flex-col md:flex-row justify-between">
+          <label className="text-white">Request loan</label>
           <input
             type="number"
             value={loanAmount}
@@ -107,13 +107,15 @@ function AccountOperations() {
           <span className="fixed top-32 right-5 bg-slate-200 p-1 rounded">
             Pay back ${account.loan}
             <br />
-           {account.loanPurpose && <span className="text-sm italic font-semibold text-red-600 lowercase">
-              ( {account.loanPurpose} )
-            </span>}
+            {account.loanPurpose && (
+              <span className="text-sm italic font-semibold text-red-600 lowercase">
+                ( {account.loanPurpose} )
+              </span>
+            )}
           </span>
           <button
             onClick={handlePayLoan}
-            className="bg-gray-200 p-1 rounded-md w-full mt-4 mb-0"
+            className="bg-gray-200 p-1 rounded-md w-full mt-0 md:mt-4 mb-0"
           >
             Pay loan
           </button>
